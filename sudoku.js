@@ -4,6 +4,7 @@
  * Договорись со своей командой, в каком формате возвращать этот результат.
  */
 function solve(boardString) {
+  
 }
 
 /**
@@ -19,8 +20,26 @@ function isSolved(board) {
  * Возвращает строку с игровым полем для последующего вывода в консоль.
  * Подумай, как симпатичнее сформировать эту строку.
  */
-function prettyBoard(board) {
 
+function prettyBoard(board) {
+  let newBoard = board.slice()
+  
+  newBoard.splice(3,0,['---------+-----------+---------']);
+  newBoard.splice(7,0,['---------+-----------+---------']);
+  console.log(newBoard);
+  for (let i = 0; i < newBoard.length; i++) {
+    for (let l = 0; l < newBoard[i].length; l++) {
+      if(l === 2 || l === 5) {
+        newBoard[i][l] = `${newBoard[i][l]}  |`
+      }
+    }
+    if (i === 2) {      
+    }
+    newBoard[i] = newBoard[i].map((el)=> el= `${el}  `)    
+    newBoard[i].unshift('|  ')
+    newBoard[i].push('|\n')
+  }
+  return newBoard.toString().replace(/,/g, '')
 }
 
 // Экспортировать функции для использования в другом файле (например, readAndSolve.js).
