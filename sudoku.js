@@ -92,12 +92,20 @@ function isSolved(board) {
  * Возвращает строку с игровым полем для последующего вывода в консоль.
  * Подумай, как симпатичнее сформировать эту строку.
  */
+let board = '135862---3957764-52004--819-19--73-6762-83-9-----61-5---76---3-43--2-5-16--3-89--'
+let newArr = []
+
+for (let i = 0; i < board.length; i= i+9) {
+  let str = board.slice(i, i+9)
+  newArr.push(str.split(''))
+}
+
 
 function prettyBoard(board) {
   let newBoard = board.slice()
   
-  newBoard.splice(4,0,['---------+-----------+---------']);
-  newBoard.splice(8,0,['---------+-----------+---------']);
+  newBoard.splice(3,0,['---------+-----------+---------']);
+  newBoard.splice(7,0,['---------+-----------+---------']);
   console.log(newBoard);
   for (let i = 0; i < newBoard.length; i++) {
     for (let l = 0; l < newBoard[i].length; l++) {
@@ -112,11 +120,13 @@ function prettyBoard(board) {
     newBoard[i].unshift('|  ')
     newBoard[i].push('|\n')
 
+
   }
 
   return newBoard.toString().replace(/,/g, '')
 
 }
+console.log(prettyBoard(newArr));
 
 // Экспортировать функции для использования в другом файле (например, readAndSolve.js).
 module.exports = {
