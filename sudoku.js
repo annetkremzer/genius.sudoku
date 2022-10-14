@@ -96,8 +96,8 @@ function isSolved(board) {
 function prettyBoard(board) {
   let newBoard = board.slice()
   
-  newBoard.splice(4,0,['---------+-----------+---------']);
-  newBoard.splice(8,0,['---------+-----------+---------']);
+  newBoard.splice(3,0,['---------+-----------+---------']);
+  newBoard.splice(7,0,['---------+-----------+---------']);
   console.log(newBoard);
   for (let i = 0; i < newBoard.length; i++) {
     for (let l = 0; l < newBoard[i].length; l++) {
