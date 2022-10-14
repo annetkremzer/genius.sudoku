@@ -4,8 +4,6 @@
  * Договорись со своей командой, в каком формате возвращать этот результат.
  */
 function solve(boardString) {
-
-
   
 }
 
@@ -22,14 +20,6 @@ function isSolved(board) {
  * Возвращает строку с игровым полем для последующего вывода в консоль.
  * Подумай, как симпатичнее сформировать эту строку.
  */
-let board = '135862---3957764-52004--819-19--73-6762-83-9-----61-5---76---3-43--2-5-16--3-89--'
-let newArr = []
-
-for (let i = 0; i < board.length; i= i+9) {
-  let str = board.slice(i, i+9)
-  newArr.push(str.split(''))
-}
-
 
 function prettyBoard(board) {
   let newBoard = board.slice()
@@ -43,20 +33,14 @@ function prettyBoard(board) {
         newBoard[i][l] = `${newBoard[i][l]}  |`
       }
     }
-    if (i === 2) {
-      
+    if (i === 2) {      
     }
     newBoard[i] = newBoard[i].map((el)=> el= `${el}  `)    
     newBoard[i].unshift('|  ')
     newBoard[i].push('|\n')
-
-
   }
-
   return newBoard.toString().replace(/,/g, '')
-
 }
-console.log(prettyBoard(newArr));
 
 // Экспортировать функции для использования в другом файле (например, readAndSolve.js).
 module.exports = {
